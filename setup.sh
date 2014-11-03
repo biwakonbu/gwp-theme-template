@@ -1,12 +1,14 @@
 #/bin/bash
 
-REMOVE='sass|slim|package\.json|setup\.sh|node_modules|README.md|.gitignore'
+DIR='sass|slim|node_modules'
+FILES='package\.json|setup\.sh|README.md|.gitignore|theme.zip'
+REMOVE="$DIR|$FILES"
 RESULTS=`ls | egrep -v ${REMOVE}`
 
-mkdir temp
+mkdir theme
 for res in $RESULTS; do
-    cp -R $res temp/$res
+    cp -R $res theme/$res
 done
 
-zip -r theme.zip temp
-rm -rf temp
+zip -r theme.zip theme
+rm -rf theme
