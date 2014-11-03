@@ -1,6 +1,6 @@
 #/bin/bash
 
-REMOVE='sass|slim|package\.json|setup\.sh|node_modules'
+REMOVE='sass|slim|package\.json|setup\.sh|node_modules|README.md|.gitignore'
 RESULTS=`ls | egrep -v ${REMOVE}`
 
 mkdir temp
