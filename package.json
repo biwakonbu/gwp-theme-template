@@ -1,0 +1,18 @@
+{
+  "name": "sample_wordpress_theme",
+  "version": "0.0.0",
+  "description": "WordPress Sample Theme Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "biwakonbu",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-livereload": "^2.1.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "^1.2.2",
+    "gulp-slim": "0.0.10"
+  }
+}
