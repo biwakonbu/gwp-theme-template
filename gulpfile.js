@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var slim = require('gulp-slim');
 var plumber = require('gulp-plumber');
 var compass = require('gulp-compass');
 var $ = require('gulp-load-plugins');
@@ -17,9 +18,15 @@ gulp.task('compass',function(){
         }));
 });
 
+gulp.task('slim', function(){
+    gulp.src(['slim/**/*.slim'])
+        .pipe(plumber())
+        .pipe(slim({pretty:true}))
+        .pipe(gulp.dest('./'))
+});
+
 //watchのタスク
 gulp.task('watch',function(){
-    gulp.watch('sass/**/*.scss',function(event){
-        gulp.run('compass');
-    });
+    gulp.watch('slim/**/*.slim', ['slim']);
+    gulp.watch('sass/**/*.scss', ['compass']);
 });
