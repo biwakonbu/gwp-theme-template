@@ -19,9 +19,14 @@ gulp.task('compass',function(){
 });
 
 gulp.task('php', ['slim'], function () {
+    var left_comment = "sed -e 's/\<!--//g' ";
+    var right_comment = "sed -e 's/--\>//g' ";
+    var attribute_comment = "sed -e 's/php=\"\\(.*\\)\"/\\1/g' ";
     return gulp.src('*.html', {read: false})
         .pipe(shell([
-            "sed -e 's/\<!--//g' <%= file.path %> | sed -e 's/-->//g' > <%= f(file.path) %>",
+            left_comment + "<%= file.path %> | " +
+                right_comment + "| " +
+                attribute_comment + "> <%= f(file.path) %>",
             'ls -l <%= f(file.path) %>'
         ], {
             templateData: {
