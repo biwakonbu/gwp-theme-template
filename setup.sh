@@ -1,7 +1,7 @@
 #/bin/bash
 
 DIR='sass|slim|node_modules'
-FILES='package\.json|setup\.sh|README.md|.gitignore|theme.zip'
+FILES='\*\~|gulpfile.js|package\.json|setup\.sh|README.md|.gitignore|theme.zip|html|\.rb'
 REMOVE="$DIR|$FILES"
 RESULTS=`ls | egrep -v ${REMOVE}`
 

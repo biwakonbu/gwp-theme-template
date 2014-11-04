@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var slim = require('gulp-slim');
 var plumber = require('gulp-plumber');
 var compass = require('gulp-compass');
-var $ = require('gulp-load-plugins');
 
 //Compassのタスク
 gulp.task('compass',function(){
