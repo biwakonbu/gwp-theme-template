@@ -46,7 +46,7 @@ gulp.task('slim', function(){
 
 //watchのタスク
 gulp.task('watch',function(){
-    gulp.watch('./**/*.slim', ['php']);
+    gulp.watch('slim/**/*.slim', ['php']);
     gulp.watch('sass/**/*.scss', ['compass']);
 });
 
