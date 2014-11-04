@@ -24,9 +24,21 @@ To run the ``$ gulp watch`` If you want to compile it by performing the monitori
 
 ```slim
 doctype html
-  /! <?php echo 'sample code.'; ?>
-  /!
-    <?php
+html[php=="<?php echo 'attribute embed code'; ?>"]
+  head
+    /! <?php echo 'sample code.'; ?>
+    /!
+      <?php
+        echo 'multiple line code.';
+      ?>
+```
+
+```html
+<html <?php echo 'attribute embed code'; ?>>
+  <head>
+    <?php echo 'sample code.'; ?><?php
       echo 'multiple line code.';
     ?>
+  </head>
+</html>
 ```
